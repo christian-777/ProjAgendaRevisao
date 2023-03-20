@@ -13,6 +13,7 @@ do
             break;
 
         case 2:
+            EditItem();
             break;
 
         case 3:
@@ -31,6 +32,25 @@ do
             break;
     }
 } while (true);
+
+void EditItem()
+{
+    Console.WriteLine("Informe o nome: ");
+    var n = Console.ReadLine();
+    int i = 0;
+    string aux;
+
+    foreach (var item in phonebook)
+    {
+        if (item.Name.Equals(n))
+        {
+            Console.WriteLine("Novo numero de telefone: ");
+            item.EditPhone(Console.ReadLine());
+            return;
+        }
+        i++;
+    }
+}
 
 Contact DeleteContact()
 {
